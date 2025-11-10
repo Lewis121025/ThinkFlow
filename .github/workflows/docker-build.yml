@@ -1,10 +1,15 @@
 name: Docker Build
 
+# 注意：此工作流需要 GitHub Actions 计费账户
+# 如果账户被锁定，可以暂时禁用此工作流或使用本地构建
+
 on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+  # 暂时禁用自动触发，需要时手动运行
+  # push:
+  #   branches: [ main, master ]
+  # pull_request:
+  #   branches: [ main, master ]
+  workflow_dispatch:  # 允许手动触发
 
 jobs:
   build:
