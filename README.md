@@ -25,14 +25,35 @@ AI_Agent_Learning/
 
 ### 方式1: Docker（推荐）
 
+#### 前置要求
+
+确保 Docker Desktop 已安装并正在运行。
+
+**Windows:**
+- 启动 Docker Desktop 应用程序
+- 等待系统托盘图标显示 Docker 已运行
+
 #### 1. 构建镜像
 
+**使用构建脚本（推荐）:**
+
+**Windows (PowerShell):**
+```powershell
+.\build.ps1
+```
+
+**Linux/Mac:**
+```bash
+chmod +x build.sh
+./build.sh
+```
+
+**或手动构建:**
 ```bash
 docker build -t thinkflow:latest .
 ```
 
-或使用 docker-compose:
-
+**或使用 docker-compose:**
 ```bash
 docker-compose build
 ```
