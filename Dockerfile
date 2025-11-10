@@ -23,11 +23,13 @@ COPY requirements.txt .
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
-# 复制项目文件
-COPY . .
+# 复制项目文件（排除不需要的文件）
+COPY src/ ./src/
+COPY main.py .
+COPY requirements.txt .
 
-# 确保 Python 可执行文件存在
-RUN which python && python --version
+# 验证关键文件
+RUN test -f main.py && test -d src && echo "✓ Files copied successfully"
 
 # 创建非root用户（可选，提高安全性）
 RUN useradd -m -u 1000 thinkflow && \
@@ -36,8 +38,8 @@ RUN useradd -m -u 1000 thinkflow && \
 # 切换到非root用户
 USER thinkflow
 
-# 验证工作目录和文件
-RUN ls -la /app && test -f main.py && echo "✓ main.py exists"
+# 验证 Python 环境
+RUN python --version && python -c "import sys; print(f'Python path: {sys.executable}')"
 
 # 暴露端口（如果需要）
 # EXPOSE 8000
