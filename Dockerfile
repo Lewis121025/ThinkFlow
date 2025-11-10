@@ -26,10 +26,18 @@ RUN pip install --upgrade pip && \
 # 复制项目文件
 COPY . .
 
+# 确保 Python 可执行文件存在
+RUN which python && python --version
+
 # 创建非root用户（可选，提高安全性）
 RUN useradd -m -u 1000 thinkflow && \
     chown -R thinkflow:thinkflow /app
+
+# 切换到非root用户
 USER thinkflow
+
+# 验证工作目录和文件
+RUN ls -la /app && test -f main.py && echo "✓ main.py exists"
 
 # 暴露端口（如果需要）
 # EXPOSE 8000
