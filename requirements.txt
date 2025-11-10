@@ -1,0 +1,27 @@
+# AI Agent Learning Project - 依赖包列表
+# 安装命令: pip install -r requirements.txt
+
+# 核心AI框架
+openai>=1.0.0
+langgraph>=0.0.1
+langchain>=0.1.0
+langchain-openai>=0.1.0
+langchain-core>=0.1.0
+langchain-community>=0.0.20
+
+# 环境变量管理
+python-dotenv>=1.0.0
+
+# Google API (用于搜索功能)
+google-api-python-client>=2.0.0
+
+# 向量数据库和嵌入
+faiss-cpu>=1.7.4
+sentence-transformers>=2.2.0
+
+# 工具库
+rich>=13.0.0
+
+# 其他依赖
+typing-extensions>=4.0.0
+

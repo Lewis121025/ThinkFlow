@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  thinkflow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: thinkflow
+    image: thinkflow:latest
+    volumes:
+      # 挂载.env文件（如果存在）
+      - ${PWD}/.env:/app/.env:ro
+      # 挂载faiss_index目录（如果存在）
+      - ${PWD}/faiss_index:/app/faiss_index:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+    # 如果需要暴露端口
+    # ports:
+    #   - "8000:8000"
+    # 默认命令
+    command: ["--help"]
+    # 保持容器运行（用于交互式使用）
+    stdin_open: true
+    tty: true
+

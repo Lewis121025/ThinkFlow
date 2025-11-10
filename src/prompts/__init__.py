@@ -1,0 +1,13 @@
+"""提示词模块"""
+from .tot_prompts import (
+    GENERATOR_SYSTEM_PROMPT,
+    EVALUATOR_SYSTEM_PROMPT,
+    PLANNER_SYSTEM_PROMPT
+)
+
+__all__ = [
+    "GENERATOR_SYSTEM_PROMPT",
+    "EVALUATOR_SYSTEM_PROMPT",
+    "PLANNER_SYSTEM_PROMPT"
+]
+
