@@ -1,6 +1,23 @@
 # Docker 使用指南
 
-## 构建镜像
+## 本地 Docker 构建
+
+由于 GitHub Actions 需要计费账户，建议使用本地 Docker 构建。
+
+### 使用构建脚本（推荐）
+
+**Windows (PowerShell):**
+```powershell
+.\build.ps1
+```
+
+**Linux/Mac:**
+```bash
+chmod +x build.sh
+./build.sh
+```
+
+### 手动构建
 
 ```bash
 # 基本构建
@@ -70,4 +87,15 @@ docker run -it --rm thinkflow:latest /bin/bash
 # 或使用 docker-compose
 docker-compose run --rm thinkflow /bin/bash
 ```
+
+## GitHub Actions 说明
+
+GitHub Actions 需要：
+- 公共仓库：免费（有限制）
+- 私有仓库：需要 GitHub Pro/Team/Enterprise 账户
+
+如果遇到计费问题：
+1. 检查 GitHub 账户设置
+2. 使用本地 Docker 构建（推荐）
+3. 或使用其他 CI/CD 服务（如 GitLab CI, CircleCI 等）
 

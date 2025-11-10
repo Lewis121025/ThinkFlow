@@ -168,7 +168,7 @@ run_planner_agent("你的任务")
 
 详细的 Docker 使用说明请查看 [DOCKER.md](DOCKER.md)
 
-**注意**: GitHub Actions 需要计费账户。如果遇到计费问题，请使用本地 Docker 构建（见 [BUILD.md](BUILD.md)）
+**注意**: GitHub Actions 需要计费账户。如果遇到计费问题，请使用本地 Docker 构建（见 [DOCKER.md](DOCKER.md)）
 
 ## ⚠️ 常见问题
 
